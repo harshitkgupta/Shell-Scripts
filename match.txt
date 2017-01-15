@@ -1,0 +1,11 @@
+myscripts myscripts/pattern.sh 
+myscripts myscripts/airth.sh 
+myscripts myscripts/backup.sh 
+myscripts myscripts/checkprime.sh 
+myscripts myscripts/chess.sh 
+myscripts myscripts/cmdarg.sh 
+myscripts myscripts/colorful.sh 
+myscripts myscripts/colorful.sh.gpg 
+myscripts myscripts/concat.sh 
+myscripts myscripts/del.sh 
+myscripts myscripts/pattern.sh 

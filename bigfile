@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ -n "$1" -a "$1" = "-h" ]
+then
+	echo "usage: bigfile <from-size> <to-size> [opt.]"
+	echo "Example: bigfile  #top 5 entries"
+	echo "Example: bigfile 100M # top 5 entry bigger than 100 M"
+	echo "Example: bigfile 10M 25M #top 5 entry bw 10M and 25M"
+	exit
+fi
+if [ $# -eq 0 ]
+then
+	find . -type f -exec ls -l '{}' \; | awk '{print $5, $NF}'| sort -nr | head -5
+elif [ $# -eq 1 ]
+then
+	find . -type f -size +$1 -exec ls -l '{}' \;|awk '{print $5, $NF}'|sort -nr|head -5
+elif [ $# -eq 2 ]
+then
+	find . -type f -size +$1 -size -$2 -exec -ls -l '{}' \;|awk '{print $5, $NF}'|sort -nr |head -5
+fi 
